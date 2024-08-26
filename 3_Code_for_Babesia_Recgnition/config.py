@@ -2,8 +2,8 @@ import os
 import torchvision.transforms as transforms
 
 #Path settings for Training and Testing Data
-source_path = r'../DTGCN_DATA/3_Babesia_Parasite_Recognition/train'
-target_path = r'../DTGCN_DATA/3_Babesia_Parasite_Recognition/test'
+source_path = r'D:/Research downloads/datasets/dataset brice/DTGCN_DATA/3_Babesia_Parasite_Recognition/train'
+target_path = r'D:/Research downloads/datasets/dataset brice/DTGCN_DATA/3_Babesia_Parasite_Recognition/test'
 # dir
 model_dir = 'Model_and_Log'
 net_dir = 'ResNet'

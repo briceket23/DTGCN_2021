@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.optim as optim
+from sklearn.preprocessing import OneHotEncoder
 from torch.utils.data import DataLoader
 import torchvision.datasets as dataset
 import numpy as np
@@ -110,7 +111,7 @@ def train():
             k_means_target.fit(target_features)
             target_label_centers = torch.tensor(k_means_target.cluster_centers_, requires_grad=True).to(device)
             acc_target, target_labels_true, target_labels_pred = utils_fun.cluster_acc(target_labels_numpy, k_means_target.labels_, config.class_num)
-            one_hot = preprocessing.OneHotEncoder(sparse=False, categories='auto')
+            one_hot = OneHotEncoder(sparse_output=False, categories='auto')
             target_one_hot = one_hot.fit_transform(np.array(target_labels_pred).reshape(-1, 1))
             target_labels_pred_torch = torch.tensor(target_one_hot).to(device)
             target_soft_labels = F.softmax(torch.exp(torch.sqrt(torch.sum(torch.pow((target_outputs.unsqueeze(1) - target_label_centers), 2), 2))*-1), 1)

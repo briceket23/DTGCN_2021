@@ -2,8 +2,8 @@ import os
 import torchvision.transforms as transforms
 
 #Path settings for Training and Testing Data
-source_path = r'../DTGCN_DATA/1_Multistage_Malaria_Parasite_Recognition/train'
-target_path = r'../DTGCN_DATA/1_Multistage_Malaria_Parasite_Recognition/test'
+source_path = r'D:\Research downloads\datasets\dataset brice\DTGCN_DATA\1_Multistage_Malaria_Parasite_Recognition\train'
+target_path = r'D:\Research downloads\datasets\dataset brice\DTGCN_DATA\1_Multistage_Malaria_Parasite_Recognition\test'
 
 
 
